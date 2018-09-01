@@ -8,6 +8,9 @@ for letter in "python":
 
 print "Good bye!"
 
+import time
+print time.asctime(time.localtime())
+
 # fruits = ["banana", 'apple', "mango"]
 # for index in range(len(fruits)):
 #     print "当前水果:", fruits[index]
