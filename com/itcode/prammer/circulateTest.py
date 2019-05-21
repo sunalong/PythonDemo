@@ -3,13 +3,13 @@
 for letter in "python":
     if letter == "h":
         pass
-        print "这是pass块"
-    print "当前字母:", letter
+        print ("这是pass块")
+    print("当前字母:", letter)
 
-print "Good bye!"
+print("Good bye!")
 
 import time
-print time.asctime(time.localtime())
+print (time.asctime(time.localtime()))
 
 # fruits = ["banana", 'apple', "mango"]
 # for index in range(len(fruits)):
