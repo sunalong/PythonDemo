@@ -4,6 +4,8 @@ from urllib import request
 from urllib import parse
 from http.cookiejar import CookieJar
 
+from http.cookiejar import MozillaCookieJar
+
 dapeng_url = "http://www.renren.com/880151247/profile"
 
 # 1.不使用cookie去请求大鹏主页
@@ -46,7 +48,19 @@ def visit_profile(opener):
         fp.write(resp.read().decode('utf-8'))
 
 
+def print_cookie():
+    cookieJar = MozillaCookieJar('cookie.txt')
+    cookieJar.load(ignore_discard=True)
+    handler = request.HTTPCookieProcessor(cookieJar)
+    opener = request.build_opener(handler)
+
+    resp = opener.open('http://httpbin.org/cookies')
+    cookieJar.save(ignore_discard=True)
+    for cookie in cookieJar:
+        print(cookie)
+
 if __name__ == '__main__':
-    opener = get_opener()
-    login_renren(opener)
-    visit_profile(opener)
+    # opener = get_opener()
+    # login_renren(opener)
+    # visit_profile(opener)
+    print_cookie()
