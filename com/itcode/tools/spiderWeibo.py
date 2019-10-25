@@ -4,7 +4,6 @@ import os
 import requests
 import logging
 
-import shutil
 import threadpool
 
 class WbGrawler():
@@ -23,11 +22,8 @@ class WbGrawler():
         self.start_pages = start
         self.end_pages = end
         # 图片保存位置
-        self.path = "/Users/along/Desktop/"+str(containerid)
-        # 如果目录不存在，创建目录
-        if not os.path.exists(self.path):
-            os.makedirs(self.path)
-            print("目录：" + self.path + "   创建成功")
+        self.root_path = "/Users/along/Desktop"
+        self.pic_dir = ""
 
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
@@ -53,6 +49,15 @@ class WbGrawler():
         :param json: 传入的json数据
         :return: 返回目标数据
         """
+
+        nick_name = json.get('data').get('cards')[0].get('mblog').get('user').get('screen_name')  # 博主昵称
+        self.pic_dir = self.root_path + "/" + nick_name
+        # 如果目录不存在，创建目录
+        if not os.path.exists(self.pic_dir):
+            os.makedirs(self.pic_dir)
+            print("目录：" + self.pic_dir + "   创建成功")
+
+
         items = json.get("data").get("cards")
         for item in items:
             pics = item.get("mblog").get("pics")
@@ -74,10 +79,15 @@ class WbGrawler():
         """
         for result in results:
             for img_dict in result:
-                img_name = img_dict.get("pid") + ".jpg"
+                if img_dict.get("url").endswith('.jpg'):  # 保存jpg图片
+                    suffix = '.jpg'
+                if img_dict.get("url").endswith('.gif'):  # 保存gif图片
+                    suffix = '.gif'
+
+                img_name = img_dict.get("pid") + suffix
                 try:
                     img_data = requests.get(img_dict.get("url")).content
-                    with open(self.path+"/"+img_name,"wb") as file:
+                    with open(self.pic_dir+"/"+img_name,"wb") as file:
                         file.write(img_data)
                         file.close()
                         print(img_name+"\tdownload successed!")
@@ -92,7 +102,7 @@ class WbGrawler():
 
 if __name__ == '__main__':
     # 输入containerid,startPage,endPage
-    wg = WbGrawler(2304131792328230,0,100)
+    wg = WbGrawler(2304131792328230,0,10)
     pool = threadpool.ThreadPool(10)
     reqs = threadpool.makeRequests(wg.startCrawler,range(wg.start_pages,wg.end_pages))
     [pool.putRequest(req) for req in reqs]
