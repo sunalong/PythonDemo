@@ -15,7 +15,8 @@ class WbGrawler():
         self.baseurl = "https://m.weibo.cn/api/container/getIndex?containerid="+str(containerid)+"&"
         self.headers = {
             "Host": "m.weibo.cn",
-            "Referer": "https://m.weibo.cn/p/"+str(containerid),
+            # "Referer": "https://m.weibo.cn/p/"+str(containerid),
+            "Referer": "https://m.weibo.cn/u/"+str(containerid),
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36",
             "X-Requested-with": "XMLHttpRequest"
         }
@@ -116,29 +117,29 @@ if __name__ == '__main__':
         再点击：查看他的全部微博
     """
     # 输入containerid,startPage,endPage
-    # wg = WbGrawler('欧陽忍Shorio',2304131687902095,1,1000)
-    # wg = WbGrawler('无肌肉不硬汉',2304135571216925,1,1000)
-    # wg = WbGrawler('Fitpics',2304132954360244,1,1000)
-    # wg = WbGrawler('女神图册',2304136525872699,1,1000)
+    # wg = WbGrawler(2304131687902095,'欧陽忍Shorio',1,1000)
+    # wg = WbGrawler(2304135571216925,'无肌肉不硬汉',1,1000)
+    # wg = WbGrawler(2304132954360244,'Fitpics',1,1000)
+    # wg = WbGrawler(2304136525872699,'女神图册',1,1000)
 
-    # wg = WbGrawler('姜黎明Momo',2304132916497573,1,1000)
-    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
-    wg = WbGrawler('2304135022385098','健身励志CLUB',1,1000)
-    wg = WbGrawler('2304136085757683','燃脂大师',1,1000)
-    wg = WbGrawler('2304133902891751','街头健身小芳',1,1000)
-    wg = WbGrawler('2304135364117255','肌友大方',1,1000)
-    wg = WbGrawler('2304135852465340','全球健身汇总',1,1000)
-    wg = WbGrawler('2304135564345574','街头健身汇',1,1000)
-    wg = WbGrawler('2304135066337241','北京健身汇',1,1000)
-    wg = WbGrawler('2304131674411610','超级健身王',1,1000)
-    wg = WbGrawler('2304133975175672','腹肌工场',1,1000)
-    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
-    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
-    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
-    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
-    # wg = WbGrawler('刘亦菲',2304133261134763,1,1000)
-    # wg = WbGrawler('杨幂',2304131195242865,1,1000)
-    # wg = WbGrawler('胡歌',2304131223178222,1,1000)
+    # wg = WbGrawler(2304132916497573,'姜黎明Momo',1,1000)
+    # wg = WbGrawler(2304135707380106,'健身汇精选',1,1000)
+    # wg = WbGrawler(2304135022385098,'健身励志CLUB',1,1000)
+    # wg = WbGrawler(2304136085757683,'燃脂大师',1,1000)
+    # wg = WbGrawler(2304133902891751,'街头健身小芳',1,1000)
+    # wg = WbGrawler(2304135364117255,'肌友大方',1,1000)
+    # wg = WbGrawler(2304135852465340,'全球健身汇总',1,1000)
+    # wg = WbGrawler(2304135564345574,'街头健身汇',1,1000)
+    # wg = WbGrawler(2304135066337241,'北京健身汇',1,1000)
+    # wg = WbGrawler(2304131674411610,'超级健身王',1,1000)
+    # wg = WbGrawler(2304133975175672,'腹肌工场',1,1000)
+    # wg = WbGrawler(2304135707380106,'健身汇精选',1,1000)
+    # wg = WbGrawler(2304135707380106,'健身汇精选',1,1000)
+    # wg = WbGrawler(2304135707380106,'健身汇精选',1,1000)
+    # wg = WbGrawler(2304135707380106,'健身汇精选',1,1000)
+    wg = WbGrawler(2304133261134763,'刘亦菲',1,10)
+    # wg = WbGrawler(2304131195242865,'杨幂',1,1000)
+    # wg = WbGrawler(2304131223178222,'胡歌',1,1000)
     pool = threadpool.ThreadPool(10)
     reqs = threadpool.makeRequests(wg.startCrawler,range(wg.start_pages,wg.end_pages))
     [pool.putRequest(req) for req in reqs]
