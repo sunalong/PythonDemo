@@ -7,7 +7,7 @@ import logging
 import threadpool
 
 class WbGrawler():
-    def __init__(self,containerid,start=1,end=500):
+    def __init__(self,containerid,nick_name,start=1,end=500):
         """
         参数的初始化
         :return:
@@ -22,8 +22,13 @@ class WbGrawler():
         self.start_pages = start
         self.end_pages = end
         # 图片保存位置
-        self.root_path = "/Users/along/Desktop"
-        self.pic_dir = ""
+        self.pic_dir = "/Users/along/Desktop/"+ nick_name
+
+        # 如果目录不存在，创建目录
+        if not os.path.exists(self.pic_dir):
+            os.makedirs(self.pic_dir)
+            print("目录：" + self.pic_dir + "   创建成功")
+
 
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
@@ -40,7 +45,7 @@ class WbGrawler():
             if response.status_code == 200:
                 return response.json()
         except requests.ConnectionError as e:
-            print("error")
+            print("errorJsonURL:",url)
             self.logger.error("error",e.args)
 
     def parserJson(self, json):
@@ -50,16 +55,16 @@ class WbGrawler():
         :return: 返回目标数据
         """
 
-        nick_name = json.get('data').get('cards')[0].get('mblog').get('user').get('screen_name')  # 博主昵称
-        self.pic_dir = self.root_path + "/" + nick_name
-        # 如果目录不存在，创建目录
-        if not os.path.exists(self.pic_dir):
-            os.makedirs(self.pic_dir)
-            print("目录：" + self.pic_dir + "   创建成功")
-
-
+        # nick_name = json.get('data').get('cards')[0].get('mblog').get('user').get('screen_name')  # 博主昵称
+        # self.pic_dir = self.root_path + "/" + nick_name
+        # # 如果目录不存在，创建目录
+        # if not os.path.exists(self.pic_dir):
+        #     os.makedirs(self.pic_dir)
+        #     print("目录：" + self.pic_dir + "   创建成功")
+        print("json:",json)
         items = json.get("data").get("cards")
         for item in items:
+            print("item:",item)
             pics = item.get("mblog").get("pics")
             picList = []
             # 有些微博没有配图，所以需要加一个判断，方便后面遍历不会出错
@@ -101,8 +106,39 @@ class WbGrawler():
 
 
 if __name__ == '__main__':
+    """
+    containerid的获取：
+    1.打开用户主页：https://weibo.com/p/1005051687902095/home?from=page_100505&mod=TAB&is_all=1#place
+    2.在weibo.com前加个m.  如：https://m.weibo.com/p/1005051687902095/home?from=page_100505&mod=TAB&is_all=1#place
+        然后访问，则url变成：https://m.weibo.cn/p/1005051687902095
+    3.然后点击主页 https://m.weibo.cn/p/1005051687902095
+    4.滑动到最下方：option+command+j
+        再点击：查看他的全部微博
+    """
     # 输入containerid,startPage,endPage
-    wg = WbGrawler(2304131792328230,0,10)
+    # wg = WbGrawler('欧陽忍Shorio',2304131687902095,1,1000)
+    # wg = WbGrawler('无肌肉不硬汉',2304135571216925,1,1000)
+    # wg = WbGrawler('Fitpics',2304132954360244,1,1000)
+    # wg = WbGrawler('女神图册',2304136525872699,1,1000)
+
+    # wg = WbGrawler('姜黎明Momo',2304132916497573,1,1000)
+    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
+    wg = WbGrawler('2304135022385098','健身励志CLUB',1,1000)
+    wg = WbGrawler('2304136085757683','燃脂大师',1,1000)
+    wg = WbGrawler('2304133902891751','街头健身小芳',1,1000)
+    wg = WbGrawler('2304135364117255','肌友大方',1,1000)
+    wg = WbGrawler('2304135852465340','全球健身汇总',1,1000)
+    wg = WbGrawler('2304135564345574','街头健身汇',1,1000)
+    wg = WbGrawler('2304135066337241','北京健身汇',1,1000)
+    wg = WbGrawler('2304131674411610','超级健身王',1,1000)
+    wg = WbGrawler('2304133975175672','腹肌工场',1,1000)
+    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
+    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
+    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
+    wg = WbGrawler('2304135707380106','健身汇精选',1,1000)
+    # wg = WbGrawler('刘亦菲',2304133261134763,1,1000)
+    # wg = WbGrawler('杨幂',2304131195242865,1,1000)
+    # wg = WbGrawler('胡歌',2304131223178222,1,1000)
     pool = threadpool.ThreadPool(10)
     reqs = threadpool.makeRequests(wg.startCrawler,range(wg.start_pages,wg.end_pages))
     [pool.putRequest(req) for req in reqs]
