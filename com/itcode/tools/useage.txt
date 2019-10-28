@@ -1,0 +1,17 @@
+
+读取文件 config.ini
+如果文件的行 不是以分号 ; 开头的，则切分本行，
+将切分获取的数据给spiderWeibo中的WbGrawler来执行
+
+
+containerid的获取：
+    法一：
+        1.打开用户主页：https://weibo.com/p/1005051687902095/home?from=page_100505&mod=TAB&is_all=1#place
+        2.在weibo.com前加个m.  如：https://m.weibo.com/p/1005051687902095/home?from=page_100505&mod=TAB&is_all=1#place
+            然后访问，则url变成：https://m.weibo.cn/p/1005051687902095
+        3.然后点击主页 https://m.weibo.cn/p/1005051687902095
+        4.滑动到最下方：option+command+j
+            再点击：查看他的全部微博
+    法二：
+        1.打开m.weibo.com
+        2.搜索微博号，然后访问主页；其他同法一第4步
