@@ -3,6 +3,8 @@
 如果文件的行 不是以分号 ; 开头的，则切分本行，
 将切分获取的数据给spiderWeibo中的WbGrawler来执行
 
+之所以不使用解析json获取昵称的原因是，
+想要一眼就能知道每个containerid与昵称的对应关系
 
 containerid的获取：
     法一：
