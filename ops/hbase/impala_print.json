@@ -1,0 +1,43 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "byte": 1048576
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "rdbmsreader",
+          "parameter": {
+            "username": "sa_cluster",
+            "passwoddrd": "sss",
+            "splitPk": "pk",
+            "connection": [
+              {
+                "querySql": [
+                  "select user_id,base_time,distinct_id,value from segmenter_chenshuiyonghu limit 10 /*SA(production)*/;"
+                ],
+                "jdbcUrl": [
+                  "jdbc:impala://10.10.58.190:21050/rawdata;auth=noSasl"
+                ]
+              }
+            ],
+            "fetchSize": 1024,
+            "column": []
+          }
+        },
+        "writer": {
+          "name": "streamwriter",
+          "parameter": {
+            "print": true
+          }
+        }
+      }
+    ]
+  }
+}

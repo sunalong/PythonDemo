@@ -1,0 +1,153 @@
+
+#别名尽可能的一看就明白，不要缩写，否则会tab时会与各种命令混一起
+#在~/.zshrc中加入：source ~/.ssh_host 即可
+#master
+alias hadoop-master1="ssh sqoop@uhadoop-mzwc2w-master1"
+alias hadoop-master2="ssh sqoop@uhadoop-mzwc2w-master2"
+
+#hdfs
+alias hdfs-core1="ssh sqoop@uhadoop-mzwc2w-core1"
+alias hdfs-core2="ssh sqoop@uhadoop-mzwc2w-core2"
+alias hdfs-core3="ssh sqoop@uhadoop-mzwc2w-core3"
+alias hdfs-core4="ssh sqoop@uhadoop-mzwc2w-core4"
+alias hdfs-core5="ssh sqoop@uhadoop-mzwc2w-core5"
+alias hdfs-core7="ssh sqoop@uhadoop-mzwc2w-core7"
+alias hdfs-core21="ssh sqoop@uhadoop-mzwc2w-core21"
+alias hdfs-core22="ssh sqoop@uhadoop-mzwc2w-core22"
+alias hdfs-core23="ssh sqoop@uhadoop-mzwc2w-core23"
+alias hdfs-core24="ssh sqoop@uhadoop-mzwc2w-core24"
+alias hdfs-core28="ssh sqoop@uhadoop-mzwc2w-core28"
+alias hdfs-core29="ssh sqoop@uhadoop-mzwc2w-core29"
+alias hdfs-core30="ssh sqoop@uhadoop-mzwc2w-core30"
+alias hdfs-core31="ssh sqoop@uhadoop-mzwc2w-core31"
+alias hdfs-core32="ssh sqoop@uhadoop-mzwc2w-core32"
+alias hdfs-core33="ssh sqoop@uhadoop-mzwc2w-core33"
+alias hdfs-core34="ssh sqoop@uhadoop-mzwc2w-core34"
+alias hdfs-core35="ssh sqoop@uhadoop-mzwc2w-core35"
+alias hdfs-core36="ssh sqoop@uhadoop-mzwc2w-core36"
+alias hdfs-core37="ssh sqoop@uhadoop-mzwc2w-core37"
+alias hdfs-core38="ssh sqoop@uhadoop-mzwc2w-core38"
+alias hdfs-core39="ssh sqoop@uhadoop-mzwc2w-core39"
+alias hdfs-core40="ssh sqoop@uhadoop-mzwc2w-core40"
+alias hdfs-core41="ssh sqoop@uhadoop-mzwc2w-core41"
+alias hdfs-core42="ssh sqoop@uhadoop-mzwc2w-core42"
+alias hdfs-core43="ssh sqoop@uhadoop-mzwc2w-core43"
+alias hdfs-core44="ssh sqoop@uhadoop-mzwc2w-core44"
+
+#yarn
+alias yarn-task1="ssh sqoop@uhadoop-mzwc2w-task1"
+alias yarn-task2="ssh sqoop@uhadoop-mzwc2w-task2"
+alias yarn-task3="ssh sqoop@uhadoop-mzwc2w-task3"
+alias yarn-task5="ssh sqoop@uhadoop-mzwc2w-task5"
+alias yarn-task12="ssh sqoop@uhadoop-mzwc2w-task12"
+alias yarn-task13="ssh sqoop@uhadoop-mzwc2w-task13"
+alias yarn-task14="ssh sqoop@uhadoop-mzwc2w-task14"
+alias yarn-task16="ssh sqoop@uhadoop-mzwc2w-task16"
+alias yarn-task17="ssh sqoop@uhadoop-mzwc2w-task17"
+alias yarn-task19="ssh sqoop@uhadoop-mzwc2w-task19"
+alias yarn-task20="ssh sqoop@uhadoop-mzwc2w-task20"
+alias yarn-task21="ssh sqoop@uhadoop-mzwc2w-task21"
+alias yarn-task22="ssh sqoop@uhadoop-mzwc2w-task22"
+alias yarn-task24="ssh sqoop@uhadoop-mzwc2w-task24"
+alias yarn-task27="ssh sqoop@uhadoop-mzwc2w-task27"
+alias yarn-task28="ssh sqoop@uhadoop-mzwc2w-task28"
+alias yarn-task29="ssh sqoop@uhadoop-mzwc2w-task29"
+alias yarn-task30="ssh sqoop@uhadoop-mzwc2w-task30"
+alias yarn-task31="ssh sqoop@uhadoop-mzwc2w-task31"
+alias yarn-task32="ssh sqoop@uhadoop-mzwc2w-task32"
+alias yarn-task33="ssh sqoop@uhadoop-mzwc2w-task33"
+alias yarn-task34="ssh sqoop@uhadoop-mzwc2w-task34"
+alias yarn-task35="ssh sqoop@uhadoop-mzwc2w-task35"
+alias yarn-task36="ssh sqoop@uhadoop-mzwc2w-task36"
+alias yarn-task48="ssh sqoop@uhadoop-mzwc2w-task48"
+alias yarn-task49="ssh sqoop@uhadoop-mzwc2w-task49"
+alias yarn-task50="ssh sqoop@uhadoop-mzwc2w-task50"
+alias yarn-task47="ssh sqoop@uhadoop-mzwc2w-task47"
+alias yarn-task51="ssh sqoop@uhadoop-mzwc2w-task51"
+
+#kafka
+alias kafka-01="ssh sqoop@ycbi-kafka-01"
+alias kafka-02="ssh sqoop@ycbi-kafka-02"
+alias kafka-03="ssh sqoop@ycbi-kafka-03"
+alias kafka-04="ssh sqoop@ycbi-kafka-04"
+alias kafka-05="ssh sqoop@ycbi-kafka-05"
+
+
+#spark(impala/kudu)
+alias spark-impala-kudu-01="ssh sqoop@ycbi-spark-01"
+alias spark-impala-kudu-02="ssh sqoop@ycbi-spark-02"
+alias spark-impala-kudu-03="ssh sqoop@ycbi-spark-03"
+
+
+#spark(clickhouse)
+alias scpark-clickhouse-task40="ssh sqoop@uhadoop-mzwc2w-task40"
+alias scpark-clickhouse-task41="ssh sqoop@uhadoop-mzwc2w-task41"
+
+#presto
+alias presto-01="ssh sqoop@ycbi-db-01"
+alias presto-task33="ssh sqoop@uhadoop-mzwc2w-task33"
+alias presto-task34="ssh sqoop@uhadoop-mzwc2w-task34"
+alias presto-task35="ssh sqoop@uhadoop-mzwc2w-task35"
+alias presto-task36="ssh sqoop@uhadoop-mzwc2w-task36"
+alias presto-task37="ssh sqoop@uhadoop-mzwc2w-task37"
+alias presto-task38="ssh sqoop@uhadoop-mzwc2w-task38"
+alias presto-task39="ssh sqoop@uhadoop-mzwc2w-task39"
+
+#clickhouse
+alias clickhouse-01="ssh sqoop@yhyc-clickhouse-01"
+alias clickhouse-02="ssh sqoop@yhyc-clickhouse-02"
+alias clickhouse-03="ssh sqoop@yhyc-clickhouse-03"
+
+#etl
+alias etl-79="ssh sqoop@10-10-64-79"
+alias etl-156="ssh sqoop@10-10-2-156"
+
+#ftp
+alias ftp-01="ssh sqoop@ycbi-ftp-01"
+alias ftp-02="ssh sqoop@ycbi-db-02"
+
+#mysql
+alias mysql-107="ssh sqoop@10.10.26.107"
+alias mysql-248="ssh sqoop@10.10.74.248"
+
+#druid
+alias druid-01="ssh sqoop@ycdi-druid-01"
+alias druid-02="ssh sqoop@ycdi-druid-02"
+alias druid-03="ssh sqoop@ycdi-druid-03"
+alias druid-04="ssh sqoop@ycdi-druid-04"
+
+#superset
+alias superset-01="ssh sqoop@ycdi-web-01"
+
+#hbase
+alias hbase-master1="ssh sqoop@uhadoop-evi34htx-master1"
+alias hbase-master2="ssh sqoop@uhadoop-evi34htx-master2"
+alias hbase-core1="ssh sqoop@uhadoop-evi34htx-core1"
+alias hbase-core2="ssh sqoop@uhadoop-evi34htx-core2"
+alias hbase-core3="ssh sqoop@uhadoop-evi34htx-core3"
+
+#test
+alias test-169="ssh sqoop@10-19-93-169"
+
+#flink
+alias flink-master1="ssh root@flink-master1-prod"
+alias flink-master2="ssh root@flink-master2-prod"
+alias flink-slave1="ssh root@flink-slave1-prod"
+alias flink-slave2="ssh root@flink-slave2-prod"
+alias flink-slave3="ssh root@flink-slave3-prod"
+alias flink-slave4="ssh root@flink-slave4-prod"
+
+#flink-test
+alias flink-test-master1="ssh root@flink-master1"
+alias flink-test-slave3="ssh root@flink-slave3"
+alias flink-test-slave2="ssh root@flink-slave2"
+
+#flink-kafka
+alias flink-kafka-1="ssh root@flink-kafka1"
+alias flink-kafka-2="ssh root@flink-kafka2"
+alias flink-kafka-3="ssh root@flink-kafka3"
+
+#tencent-kafka
+alias tecent-kafka-01="ssh root@tencent_kafka01"
+alias tecent-kafka-02="ssh root@tencent_kafka02"
+alias tecent-kafka-03="ssh root@tencent_kafka03"

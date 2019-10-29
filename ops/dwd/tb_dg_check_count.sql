@@ -1,0 +1,20 @@
+CREATE TABLE dg_check_count (
+  id int(11) COMMENT '自增主键',
+  hive_db_name varchar(254) COMMENT 'HIVE数据库名',
+  hive_table_name varchar(254) COMMENT 'Hive表名字',
+  records bigint(20) COMMENT '最新记录数',
+  check_date int(11) COMMENT '检测日期',
+  table_status int(9) COMMENT '本次检测是否成功，排除因presto的错误引起的异常',
+  max_field varchar(254) COMMENT '获取该字段的最大或者最新值',
+  max_value varchar(254) COMMENT '获取该字段的最大或者最新值值',
+  start_time varchar(254) COMMENT '该流程的运行开始时间在t_hive_check_table表中获取',
+  end_time varchar(254) COMMENT '该流程的运行结束时间在t_hive_check_table表中获取',
+  last_updated_at datetime(6) COMMENT '最后更新时间',
+  check_status int(11) COMMENT '本次检测是否成功，0，正常，1， 没有检测到记录数，2 没有检测到表状态，3，检测失败',
+  partition_field varchar(254) COMMENT '分区字段名字',
+  partition_field_value varchar(254) COMMENT '分区值',
+  catalog_value varchar(254) COMMENT 'presto上配置的catalog值，hive,kudu,mysqlxxx',
+  PRIMARY KEY (id) USING BTREE,
+  UNIQUE KEY hive_db_table_index (hive_db_name,hive_table_name,check_date) USING BTREE,
+  KEY dg_check_count_check_date_index (check_date)
+) ENGINE=InnoDB AUTO_INCREMENT=23179 DEFAULT CHARSET=utf8

@@ -1,0 +1,8 @@
+# 1.  1 表示按月，如 当前为5月，则检测为 update_time >= 2018-05-01 00:00:00 则条件成立
+# 2. 正整数表示按天检测更新日期，当前日期 减去传入的历史天数 如当前日期为 2018-05-03，传入数字为‘-1’
+# 则检测时间为 update_time >= 2018-05-02 00:00:00 则条件成立
+# 3. 默认值为 0
+ods.ods_app_dim_shop   -1
+ods.ods_app_dim_goods   0
+ods.ods_app_dim_cate
+ods.ods_app_dim_member 1

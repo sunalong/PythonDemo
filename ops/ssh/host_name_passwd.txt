@@ -1,0 +1,150 @@
+#master
+uhadoop-mzwc2w-master1  sqoop Ujm123#!
+uhadoop-mzwc2w-master2  sqoop Ujm123#!
+#hdfs
+uhadoop-mzwc2w-core1     sqoop  Ujm123#!
+uhadoop-mzwc2w-core2     sqoop  Ujm123#!
+uhadoop-mzwc2w-core3     sqoop  Ujm123#!
+uhadoop-mzwc2w-core4     sqoop  Ujm123#!
+uhadoop-mzwc2w-core5     sqoop  Ujm123#!
+uhadoop-mzwc2w-core7     sqoop  Ujm123#!
+uhadoop-mzwc2w-core21    sqoop  Ujm123#!
+uhadoop-mzwc2w-core22    sqoop  Ujm123#!
+uhadoop-mzwc2w-core23    sqoop  Ujm123#!
+uhadoop-mzwc2w-core24    sqoop  Ujm123#!
+uhadoop-mzwc2w-core28    sqoop  Ujm123#!
+uhadoop-mzwc2w-core29    sqoop  Ujm123#!
+uhadoop-mzwc2w-core30    sqoop  Ujm123#!
+uhadoop-mzwc2w-core31    sqoop  Ujm123#!
+uhadoop-mzwc2w-core32    sqoop  Ujm123#!
+uhadoop-mzwc2w-core33    sqoop  Ujm123#!
+uhadoop-mzwc2w-core34    sqoop  Ujm123#!
+uhadoop-mzwc2w-core35    sqoop  Ujm123#!
+uhadoop-mzwc2w-core36    sqoop  Ujm123#!
+uhadoop-mzwc2w-core37    sqoop  Ujm123#!
+uhadoop-mzwc2w-core38    sqoop  Ujm123#!
+uhadoop-mzwc2w-core39    sqoop  Ujm123#!
+uhadoop-mzwc2w-core40    sqoop  Ujm123#!
+uhadoop-mzwc2w-core41    sqoop  Ujm123#!
+uhadoop-mzwc2w-core42    sqoop  Ujm123#!
+uhadoop-mzwc2w-core43    sqoop  Ujm123#!
+uhadoop-mzwc2w-core44    sqoop  Ujm123#!
+
+#yarn
+uhadoop-mzwc2w-master1  sqoop   Ujm123#!
+uhadoop-mzwc2w-master2  sqoop   Ujm123#!
+uhadoop-mzwc2w-task1    sqoop   Ujm123#!
+uhadoop-mzwc2w-task2    sqoop   Ujm123#!
+uhadoop-mzwc2w-task3    sqoop   Ujm123#!
+uhadoop-mzwc2w-task5    sqoop   Ujm123#!
+uhadoop-mzwc2w-task12   sqoop   Ujm123#!
+uhadoop-mzwc2w-task13   sqoop   Ujm123#!
+uhadoop-mzwc2w-task14   sqoop   Ujm123#!
+uhadoop-mzwc2w-task16   sqoop   Ujm123#!
+uhadoop-mzwc2w-task17   sqoop   Ujm123#!
+uhadoop-mzwc2w-task19   sqoop   Ujm123#!
+uhadoop-mzwc2w-task20   sqoop   Ujm123#!
+uhadoop-mzwc2w-task21   sqoop   Ujm123#!
+uhadoop-mzwc2w-task22   sqoop   Ujm123#!
+uhadoop-mzwc2w-task24   sqoop   Ujm123#!
+uhadoop-mzwc2w-task27   sqoop   Ujm123#!
+uhadoop-mzwc2w-task28   sqoop   Ujm123#!
+uhadoop-mzwc2w-task29   sqoop   Ujm123#!
+uhadoop-mzwc2w-task30   sqoop   Ujm123#!
+uhadoop-mzwc2w-task31   sqoop   Ujm123#!
+uhadoop-mzwc2w-task32   sqoop   Ujm123#!
+uhadoop-mzwc2w-task33   sqoop   Ujm123#!
+uhadoop-mzwc2w-task34   sqoop   Ujm123#!
+uhadoop-mzwc2w-task35   sqoop   Ujm123#!
+uhadoop-mzwc2w-task36   sqoop   Ujm123#!
+uhadoop-mzwc2w-task39   sqoop   Ujm123#!
+uhadoop-mzwc2w-task48   sqoop   Ujm123#!
+uhadoop-mzwc2w-task49   sqoop   Ujm123#!
+uhadoop-mzwc2w-task50   sqoop   Ujm123#!
+uhadoop-mzwc2w-task47   sqoop   Ujm123#!
+uhadoop-mzwc2w-task51   sqoop   Ujm123#!
+
+#kafka
+ycbi-kafka-01   sqoop   Ujm123#!
+ycbi-kafka-02   sqoop   Ujm123#!
+ycbi-kafka-03   sqoop   Ujm123#!
+ycbi-kafka-04   sqoop   Ujm123#!
+ycbi-kafka-05   sqoop   Ujm123#!
+
+#spark(impala/kudu)
+ycbi-spark-01   sqoop   Ujm123#!
+ycbi-spark-02   sqoop   Ujm123#!
+ycbi-spark-03   sqoop   Ujm123#!
+
+#spark(clickhouse)
+uhadoop-mzwc2w-task40   sqoop   Ujm123#!
+uhadoop-mzwc2w-task41   sqoop   Ujm123#!
+
+#presto
+ycbi-db-01  sqoop   Ujm123#!
+uhadoop-mzwc2w-task33   sqoop   Ujm123#!
+uhadoop-mzwc2w-task34   sqoop   Ujm123#!
+uhadoop-mzwc2w-task35   sqoop   Ujm123#!
+uhadoop-mzwc2w-task36   sqoop   Ujm123#!
+uhadoop-mzwc2w-task37   sqoop   Ujm123#!
+uhadoop-mzwc2w-task38   sqoop   Ujm123#!
+uhadoop-mzwc2w-task39   sqoop   Ujm123#!
+
+#clickhouse
+yhyc-clickhouse-01  sqoop   Ujm123#!
+yhyc-clickhouse-02  sqoop   Ujm123#!
+yhyc-clickhouse-03  sqoop   Ujm123#!
+
+#etl
+10-10-64-79 sqoop   Ujm123#!
+10-10-2-156 sqoop   Ujm123#!
+
+#ftp
+ycbi-ftp-01 sqoop   Ujm123#!
+ycbi-db-02  sqoop   Ujm123#!
+
+#mysql
+10.10.26.107    sqoop   Ujm123#!
+10.10.74.248    sqoop   Ujm123#!
+
+#druid
+ycdi-druid-01   sqoop   Ujm123#!
+ycdi-druid-02   sqoop   Ujm123#!
+ycdi-druid-03   sqoop   Ujm123#!
+ycdi-druid-04   sqoop   Ujm123#!
+
+#superset
+ycdi-web-01 sqoop   Ujm123#!
+
+#hbase
+uhadoop-evi34htx-master1    sqoop   Sqoop#9868
+uhadoop-evi34htx-master2    sqoop   Sqoop#9868
+uhadoop-evi34htx-core1  sqoop   Sqoop#9868
+uhadoop-evi34htx-core2  sqoop   Sqoop#9868
+uhadoop-evi34htx-core3  sqoop   Sqoop#9868
+
+#test 由79转
+10-19-93-169    testuser   Yhn!234#
+
+#flink
+flink-master1-prod  root    pkfRzyhEBw57
+flink-master2-prod  root    pkfRzyhEBw57
+flink-slave1-prod   root    pkfRzyhEBw57
+flink-slave2-prod   root    pkfRzyhEBw57
+flink-slave3-prod   root    pkfRzyhEBw57
+flink-slave4-prod   root    pkfRzyhEBw57
+
+#flink-test
+flink-master1   root    ,ki87ujm
+flink-slave3   root    ,ki87ujm
+flink-slave2   root    ,ki87ujm
+
+#flink-kafka
+flink-kafka1    root    pkfRzyhEBw57
+flink-kafka2    root    pkfRzyhEBw57
+flink-kafka3    root    pkfRzyhEBw57
+
+#tencent-kafka
+tencent_kafka01     root    pkfRzyhEBw57
+tencent_kafka02     root    pkfRzyhEBw57
+tencent_kafka03     root    pkfRzyhEBw57
