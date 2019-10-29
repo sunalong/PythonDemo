@@ -1,0 +1,81 @@
+# ------------------- 定义数据流----------------------
+# source的名字
+ods_flume_json_module_db_name__module_table_name_agent.sources = module_table_name_from_kafka_source  
+# channels的名字，建议按照type来命名
+ods_flume_json_module_db_name__module_table_name_agent.channels = module_table_name_mem_channel  
+# sink的名字，建议按照目标来命名
+ods_flume_json_module_db_name__module_table_name_agent.sinks = module_table_name_hdfs_sink
+
+#auto.commit.enable = true  
+
+## kerberos config ##  
+#ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.kerberosPrincipal = flume/datanode2.hdfs.alpha.com@OMGHADOOP.COM  
+#ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.kerberosKeytab = /root/apache-flume-1.6.0-bin/conf/flume.keytab   
+
+
+#-------- kafkaSource相关配置-----------------
+# 定义消息源类型
+# For each one of the sources, the type is defined  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.type = org.apache.flume.source.kafka.KafkaSource  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.channels = module_table_name_mem_channel  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.batchSize = 10000
+
+# 定义kafka所在的地址  
+#ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.zookeeperConnect = 10.129.142.46:2181,10.166.141.46:2181,10.166.141.47:2181/testkafka  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.kafka.bootstrap.servers = ycbi-kafka-01:9092,ycbi-kafka-02:9092,ycbi-kafka-03:9092,ycbi-kafka-04:9092,ycbi-kafka-05:9092
+
+# 配置消费的kafka topic
+#ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.topic = itil_topic_4097  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.kafka.topics = module_db_name.module_table_name
+
+# 配置消费的kafka groupid
+#ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.groupId = flume4097  
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.kafka.consumer.group.id = module_db_name__module_table_name_group
+#earliest 
+#当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费 
+#latest 
+#当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据 
+#none 
+#topic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的offset，则抛出异常
+ods_flume_json_module_db_name__module_table_name_agent.sources.module_table_name_from_kafka_source.kafka.consumer.auto.offset.reset = earliest
+
+
+#---------hdfsSink 相关配置------------------
+# The channel can be defined as follows.  
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.type = hdfs 
+# 指定sink需要使用的channel的名字,注意这里是channel
+#Specify the channel the sink should use  
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.channel = module_table_name_mem_channel  
+#ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.filePrefix = %{host}  
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.path = hdfs://Ucluster/user/sqoop/ods/ods_flume_json_module_db_name__module_table_name/datelabel=%Y%m%d
+
+#File size to trigger roll, in bytes (0: never roll based on file size)
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.inUsePrefix = __module_table_name
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.filePrefix = module_table_name
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.fileSuffix = .json
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.rollSize = 128220000
+#Number of events written to file before it rolled (0 = never roll based on number of events)   
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.rollCount = 0
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.batchSize = 10000
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.rollInterval = 600
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.threadsPoolSize = 15
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.callTimeout = 60000
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.idleTimeout = 60000
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.rollTimerPoolSize = 2
+#ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.codeC = gzip  
+#ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.fileType = CompressedStream  
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.fileType=DataStream    
+ods_flume_json_module_db_name__module_table_name_agent.sinks.module_table_name_hdfs_sink.hdfs.writeFormat=Text    
+
+#------- memoryChannel相关配置-------------------------
+# channel类型
+# Each channel's type is defined.  
+ods_flume_json_module_db_name__module_table_name_agent.channels.module_table_name_mem_channel.type = memory  
+# Other config values specific to each type of channel(sink or source)  
+# can be defined as well  
+# channel存储的事件容量
+# In this case, it specifies the capacity of the memory channel  
+ods_flume_json_module_db_name__module_table_name_agent.channels.module_table_name_mem_channel.capacity = 10000000
+# 事务容量
+ods_flume_json_module_db_name__module_table_name_agent.channels.module_table_name_mem_channel.transactionCapacity = 100000
+ods_flume_json_module_db_name__module_table_name_agent.channels.module_table_name_mem_channel.keep-alive = 30

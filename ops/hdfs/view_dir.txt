@@ -1,0 +1,10 @@
+/user/sqoop/ods/ods_flume_json_article_document_center__article_document_header/
+/user/sqoop/ods/ods_flume_json_article_document_center__article_document_item/
+/user/sqoop/ods/ods_flume_json_bi_data_center__data_header/
+/user/sqoop/ods/ods_flume_json_bi_data_center__data_item/
+/user/sqoop/ods/ods_flume_json_bi_data_center__data_pool/
+/user/sqoop/ods/ods_flume_json_cfg_customer_busstype/
+/user/sqoop/ods/ods_flume_json_cfg_invoice_type/
+/user/sqoop/ods/ods_flume_json_cms_db__assembly/
+/user/sqoop/ods/ods_flume_json_cms_db__assembly_ref_pool/
+/user/sqoop/ods/ods_flume_json_cms_db__page/

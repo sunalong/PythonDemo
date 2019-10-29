@@ -1,0 +1,8 @@
+[db]
+ip=10.10.64.79
+port=3306
+user=check_user
+passwd=Uiop123!
+db=check_db
+table=t_check_hive_etl
+interval=5

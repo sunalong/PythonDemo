@@ -1,0 +1,72 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 3
+            }
+        },
+        "content": [
+            {
+          "reader": {
+          "name": "hdfsreader",
+          "parameter": {
+            "path": "/user/hive/warehouse/share_data.db/out_unified_goods_info",
+            "defaultFS": "hdfs://Ucluster",
+            "column": [
+              {"index":0,"type":"long"},
+              {"index":1,"type":"string"},
+              {"index":2,"type":"string"},
+              {"index":3,"type":"string"},
+              {"index":4,"type":"string"},
+              {"index":5,"type":"string"},
+              {"index":6,"type":"string"},
+              {"index":7,"type":"string"},
+              {"index":8,"type":"string"},
+              {"index":9,"type":"string"}
+            ],
+            "fileType": "orc",
+            "encoding": "UTF-8",
+            "fieldDelimiter": ",",
+            "hadoopConfig": {
+              "dfs.nameservices": "Ucluster",
+              "dfs.ha.namenodes.Ucluster": "nn1,nn2",
+              "dfs.namenode.rpc-address.Ucluster.nn1": "uhadoop-mzwc2w-master1:8020",
+              "dfs.namenode.rpc-address.Ucluster.nn2": "uhadoop-mzwc2w-master2:8020",
+              "dfs.client.failover.proxy.provider.Ucluster": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+            }
+          }
+      },
+        "writer": {
+          "name": "hbase11xwriter",
+          "parameter": {
+            "hbaseConfig": {
+              "hbase.cluster.distributed": "true",
+              "hbase.zookeeper.quorum": "uhadoop-evi34htx-master1"
+            },
+            "table": "out_unified_goods_info",
+            "mode": "normal",
+            "rowkeyColumn": [
+                {
+                  "index":0,
+                  "type":"long"
+                }
+            ],
+            "column": [
+              { "index":0, "name":  "cf1:id","type": "long"},
+              { "index":1, "name":  "cf1:goods_id", "type": "string"},
+              { "index":2, "name":  "cf1:goods_name", "type": "string"},
+              { "index":3, "name":  "cf1:brand_id", "type": "string"},
+              { "index":4, "name":  "cf1:category_id", "type": "string"},
+              { "index":5, "name":  "cf1:unit", "type": "string"},
+              { "index":6, "name":  "cf1:spec_prop", "type": "string"},
+              { "index":7, "name":  "cf1:main_img", "type": "string"},
+              { "index":8, "name":  "cf1:list_img", "type": "string"},
+              { "index":9, "name":  "cf1:last_updated_at", "type": "string"}
+            ],
+            "encoding": "utf-8"
+          }
+        }
+            }
+        ]
+    }
+}
